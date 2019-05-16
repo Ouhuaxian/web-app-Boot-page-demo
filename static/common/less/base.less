@@ -1,0 +1,48 @@
+@theme-color:#5DABF3;           //主色
+@theme-color-sub:#9CD5FF;       //次色
+
+@theme-font:#333;               //主字体色
+@theme-font-sec:#666;           //次字体色
+@theme-font-sub:#999;           //次次字体色
+@theme-font-sub-light:#c9c9c9;           //次次字体色
+@theme-font-sub-line:#f7f6f8;           //横线颜色
+@theme-font-sub-arrow:#d8d8d8;           //箭头颜色
+
+@theme-color-bg:#f7f6f8;        //背景颜色
+
+@theme-btn:#ea7257;
+
+.wave{
+
+};
+
+.ellipsis(){
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.background(){
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.flex(){
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.toast-position-top-offset(@length){
+  @toast-position-top-offset:unit(@length, px);
+}
+
+.toast-position-bottom-offset(@length){
+  @toast-position-top-offset:unit(@length, px);
+}
+
+.toast-content-font-size(@length){
+  @ttoast-content-font-size:unit(@length, px);
+}

@@ -1,0 +1,171 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  /*兼容移动端主流浏览器*/
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  /*清除移动端点击高亮效果*/
+}
+/*清除浮动*/
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: block;
+  height: 0;
+  line-height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.content {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+.content .wrapOne {
+  position: relative;
+  overflow: hidden;
+}
+.content .wrapTwo {
+  position: relative;
+  overflow: hidden;
+}
+.content .wrapThree {
+  position: relative;
+  overflow: hidden;
+}
+.content .wrapFour {
+  position: relative;
+  overflow: hidden;
+}
+.content .boxOne {
+  position: absolute;
+  list-style: none;
+  left: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+}
+.content .boxTwo {
+  position: absolute;
+  list-style: none;
+  left: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+}
+.content .boxThree {
+  position: absolute;
+  list-style: none;
+  left: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+}
+.content .boxFour {
+  position: absolute;
+  list-style: none;
+  left: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+}
+.content li {
+  float: left;
+}
+.content .box5 {
+  position: relative;
+}
+.content .entry {
+  width: 6.4rem;
+  border: 1px solid #b6c0c9;
+  font-family: SourceHanSansCN-ExtraLight;
+  color: #b6c0c9;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.content .entry {
+  height: 2.304rem;
+  line-height: 2.304rem;
+}
+.content .entry {
+  font-size: 0.85333333rem;
+}
+.content .entry {
+  border-radius: 0.42666667rem;
+}
+.content .entry {
+  top: 88%;
+}
+.content .entry1 {
+  width: 8.23466667rem;
+}
+.content .entry1 {
+  height: 2.688rem;
+  line-height: 2.688rem;
+}
+.content .entry1 {
+  font-size: 0.98133333rem;
+}
+.content .entry2 {
+  width: 7.168rem;
+}
+.content .entry2 {
+  height: 2.56rem;
+  line-height: 2.56rem;
+}
+.content .entry2 {
+  font-size: 0.93866667rem;
+}
+.content .imgPath {
+  display: block;
+  height: auto;
+  width: 100%;
+  margin: auto;
+  max-height: 100%;
+}
+.advertisement {
+  width: 100%;
+  margin: 0;
+  height: 100%;
+  position: relative;
+}
+.advertisement .advertiseOne {
+  width: 100%;
+}
+.advertisement .advertiseImg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.advertisement .skip {
+  position: absolute;
+  background: rgba(1, 1, 1, 0.4);
+  font-family: PingFangSC-Light;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+}
+.advertisement .skip {
+  width: 2.73066667rem;
+}
+.advertisement .skip {
+  height: 1.45066667rem;
+  line-height: 1.45066667rem;
+}
+.advertisement .skip {
+  font-size: 0.59733333rem;
+}
+.advertisement .skip {
+  right: 0.81066667rem;
+}
+.advertisement .skip {
+  top: 3.072rem;
+}
+.advertisement .skip1 {
+  top: 1.36533333rem;
+}
