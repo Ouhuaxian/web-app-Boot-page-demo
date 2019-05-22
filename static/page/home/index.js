@@ -1,20 +1,35 @@
-window.onload=function(){
-
-    urlinfo = window.location.href;  //获取当前页面的url
+window.onload = function () {
+    var os;
+    var dim;
+    var version;
+    urlinfo = window.location.href; //获取当前页面的url
     console.log(urlinfo)
-    len = urlinfo.split("?");//获取url的长度
-    newsidinfo = len[1];//取出参数字符串 这里会获得类似“id=1”这样的字符串
-    console.log(newsidinfo);
-    newsids = newsidinfo.split("&");//对获得的参数字符串按照“=”进行分割
-    parameter1 = newsids[0];  //得到参数值 os：标识安卓还是ios，1=ios、2=安卓
-    os = parameter1.split("=")[1];
-    parameter2 = newsids[1];   //1=普通屏幕、2=iPhone X、3=iPhone XR、4=iPhoneX Max
-    dim = parameter2.split("=")[1];
-    parameter3 = newsids[2];  //version：广告页版本，1=第一种版本、2=第二种版本，每个版本显示的图片都是不一样的
-    version = parameter3.split("=")[1];
-    console.log("获取到的参数值是" + os, dim, version);
+    console.log(urlinfo.indexOf("?"))
+    if (urlinfo.indexOf("?") !== -1) {
+        len = urlinfo.split("?"); //获取url的长度
+        newsidinfo = len[1]; //取出参数字符串 这里会获得类似“id=1”这样的字符串
+        console.log(newsidinfo);
+        if (newsidinfo) {
+            newsids = newsidinfo.split("&"); //对获得的参数字符串按照“=”进行分割
+            parameter1 = newsids[0]; //得到参数值 os：标识安卓还是ios，1=ios、2=安卓
+            if (parameter1) {
+                os = parameter1.split("=")[1];
+            }
+            parameter2 = newsids[1]; //1=普通屏幕、2=iPhone X、3=iPhone XR、4=iPhoneX Max
+            if (parameter2) {
+                dim = parameter2.split("=")[1];
+            }
+            parameter3 = newsids[2]; //version：广告页版本，1=第一种版本、2=第二种版本，每个版本显示的图片都是不一样的
+            if (parameter3) {
+                version = parameter3.split("=")[1];
+            }
+            console.log("获取到的参数值是" + os, dim, version);
+        }
+    }
+
     if (version == 1) {
-        document.getElementById("bootPage").style.display = "none";
+        // document.getElementById("bootPage").style.display = "none";
+        document.getElementById("advertisementPage").style.display = "block";
         var viewHeight = document.documentElement.clientHeight;
         var advertise = document.querySelector('.advertise');
         advertise.style.height = viewHeight + 'px';
@@ -34,42 +49,41 @@ window.onload=function(){
             document.getElementById("advertiseOne").style.display = "none";
             document.getElementById("advertiseThree").style.display = "none";
             document.getElementById("advertiseTwo").style.display = "none";
+        } else {
+            document.getElementsByClassName("advertise").style.display = "none";
         }
-
         var skip = document.getElementsByClassName("skip");
         console.log(skip)
         for (i = 0; i < skip.length; i++) {
             console.log(skip[i])
             if (skip[i].nodeType === 1) {
-                if(dim==1){
+                if (dim == 1) {
                     skip[i].classList.add("skip1")
                 }
                 skip[i].onclick = function () {
                     console.log("与原生交互进入软件")
-                    if (os == 1) {                   //ios
+                    if (os == 1) { //ios
                         document.location = "aserboss*startMainPage";
-                    }
-                    else if (os == 2) {              //安卓
+                    } else if (os == 2) { //安卓
                         aserboss.startMainPage();
                     }
-                    // startMainPage();
                 }
             }
         }
         setTimeout(() => {
             console.log("与原生交互进入软件")
-            if (os == 1) {                   //ios
+            if (os == 1) { //ios
                 document.location = "aserboss*startMainPage";
-            }
-            else if (os == 2) {              //安卓
+            } else if (os == 2) { //安卓
                 aserboss.startMainPage();
             }
             // startMainPage();
             //满足条件清除定时器
-            clearInterval()
+            clearTimeout()
         }, 5000);
     } else if (version == 2) {
-        document.getElementById("advertisementPage").style.display = "none";
+        // document.getElementById("advertisementPage").style.display = "none";
+        document.getElementById("bootPage").style.display = "block";
         var entry = document.getElementsByClassName("entry");
         // console.log(entry)
         for (i = 0; i < entry.length; i++) {
@@ -77,10 +91,9 @@ window.onload=function(){
             if (entry[i].nodeType === 1) {
                 entry[i].onclick = function () {
                     console.log("与原生交互进入软件")
-                    if (os == 1) {                   //ios
+                    if (os == 1) { //ios
                         document.location = "aserboss*startMainPage";
-                    }
-                    else if (os == 2) {              //安卓
+                    } else if (os == 2) { //安卓
                         aserboss.startMainPage();
                     }
                     // startMainPage();
@@ -88,7 +101,6 @@ window.onload=function(){
             }
         }
     }
-
     if (dim == 1) {
         document.getElementById("wrapTwo").style.display = "none";
         document.getElementById("wrapThree").style.display = "none";
@@ -253,14 +265,14 @@ window.onload=function(){
             var currPoint = e.changedTouches[0].pageX;
             var disX = currPoint - startPoint;
             if (Math.abs(disX) > 30 && Math.abs(disX) < 150) {
-                console.log('滑动距离', Math.abs(disX), disX)
+                // console.log('滑动距离', Math.abs(disX), disX)
                 if (disX > 0) {
                     disX = disX + 150
                 } else if (disX < 0) {
                     disX = disX - 150
                 }
                 var left = startEle + disX;
-                console.log(left)
+                // console.log(left)
                 boxThree.style.left = left + 'px';
             }
         });

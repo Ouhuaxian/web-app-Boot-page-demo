@@ -3,31 +3,108 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./static/page/home/index.css">
     <title>Document</title>
 </head>
 
 <body>
+    <div class="content" id="bootPage" style="display:none">
+        <div class="wrapOne" id="wrapOne">
+            <ul class="boxOne" id="boxOne">
+                <li>
+                    <div class="box1 box2"><img class="imgPath" src="./static/image/one.png"></div>
+                </li>
+                <li>
+                    <div class="box1 box3"><img class="imgPath" src="./static/image/two.png"></div>
+                </li>
+                <li>
+                    <div class="box1 box4"><img class="imgPath" src="./static/image/three.png"></div>
+                </li>
+                <li>
+                    <div class="box1 box5">
+                        <img class="imgPath" src="./static/image/four.png">
+                        <div class="entry">进入老板助手</div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+        <div class="wrapTwo" id="wrapTwo">
+            <ul class="boxTwo" id="boxTwo">
+                <li>
+                    <div class="box6 box2"><img class="imgPath" src="./static/image/oneX.png"></div>
+                </li>
+                <li>
+                    <div class="box6 box3"><img class="imgPath" src="./static/image/twoX.png"></div>
+                </li>
+                <li>
+                    <div class="box6 box4"><img class="imgPath" src="./static/image/threeX.png"></div>
+                </li>
+                <li>
+                    <div class="box6 box5">
+                        <img class="imgPath" src="./static/image/fourX.png">
+                        <div class="entry">进入老板助手</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="wrapThree" id="wrapThree">
+            <ul class="boxThree" id="boxThree">
+                <li>
+                    <div class="box7 box2"><img class="imgPath" src="./static/image/oneXR.png"></div>
+                </li>
+                <li>
+                    <div class="box7 box3"><img class="imgPath" src="./static/image/twoXR.png"></div>
+                </li>
+                <li>
+                    <div class="box7 box4"><img class="imgPath" src="./static/image/threeXR.png"></div>
+                </li>
+                <li>
+                    <div class="box7 box5">
+                        <img class="imgPath" src="./static/image/fourXR.png">
+                        <div class="entry entry2">进入老板助手</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="wrapFour" id="wrapFour">
+            <ul class="boxFour" id="boxFour">
+                <li>
+                    <div class="box8 box2"><img class="imgPath" src="./static/image/oneXMax.png"></div>
+                </li>
+                <li>
+                    <div class="box8 box3"><img class="imgPath" src="./static/image/twoXMax.png"></div>
+                </li>
+                <li>
+                    <div class="box8 box4"><img class="imgPath" src="./static/image/threeXMax.png"></div>
+                </li>
+                <li>
+                    <div class="box8 box5">
+                        <img class="imgPath" src="./static/image/fourXMax.png">
+                        <div class="entry entry1">进入老板助手</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="advertisement" id="advertisementPage" style="display:none">
+        <div class="advertise advertiseOne" id="advertiseOne">
+            <img class="advertiseImg" src="./static/image/advertiseOne.png" alt="">
+        </div>
+        <div class="advertise advertiseTwo" id="advertiseTwo">
+            <img class="advertiseImg" src="./static/image/advertiseTwo.png" alt="">
+        </div>
+        <div class="advertise advertiseThree" id="advertiseThree">
+            <img class="advertiseImg" src="./static/image/advertiseThree.png" alt="">
+        </div>
+        <div class="advertise advertiseFour" id="advertiseFour">
+            <img class="advertiseImg" src="./static/image/advertiseFour.png" alt="">
+        </div>
+        <div class="skip">跳过</div>
+    </div>
 </body>
 
 </html>
-<script>
-    urlinfo = window.location.href;  //获取当前页面的url
-    console.log(urlinfo)  //http://127.0.0.1:5500/page/entry/index.html?os=1&version=1
-    len = urlinfo.split("?");//获取url的长度
-    newsidinfo = len[1];//取出参数字符串 这里会获得类似“id=1”这样的字符串
-    console.log(newsidinfo);
-    newsids = newsidinfo.split("&");//对获得的参数字符串按照“=”进行分割
-    parameter1 = newsids[0];  //得到参数值 os：标识安卓还是ios，1=ios、2=安卓
-    os = parameter1.split("=")[1];
-    parameter2 = newsids[1];   //1=普通屏幕、2=iPhone X、3=iPhone XR、4=iPhoneX Max
-    dim = parameter2.split("=")[1];
-    parameter3 = newsids[2];  //version：广告页版本，1=第一种版本、2=第二种版本，每个版本显示的图片都是不一样的
-    version = parameter3.split("=")[1];
-    console.log("您要传递的参数值是" + os,dim,version);
-    // if(os==1&&version==1){
-        window.location.href="./static/page/home/index.html?os="+os+'&dim='+dim+'&version='+version;
-    // }
-</script> 
+<script src="./static/page/home/index.js"></script>
